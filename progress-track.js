@@ -10,7 +10,7 @@ angular.module('projectTrackingApp', [])
         data: {
             labels: ['Completed', 'In progress', 'Not completed'],
             datasets: [{
-                data: [60, 28, 12],
+                data: [60, 30, 10],
                 backgroundColor: ['#4caf50', '#2196f3', '#f44336']
             }]
         },
