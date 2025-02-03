@@ -1,0 +1,120 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+
+.main-content {
+    flex-grow: 1;
+    background-color: #a2c9d6;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 12px 29px;
+    background-color: #3c6a7a;
+    position:relative;
+    height: 80px;
+    width: 98.8%;
+    font-size: medium;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -20px;
+}
+.header-logo {
+    width: 100px;
+    margin-right: 40px;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.user-badge {
+    width: 40px;
+    height: 40px;
+    background-color: #ff66b2;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 950px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.progress-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.progress-track {
+    width: 50%;
+    text-align: center;
+}
+
+.progress-chart {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.completed-projects {
+    width: 30%;
+}
+
+.completed-projects ul {
+    list-style: none;
+    padding: 0;
+}
+
+.completed-projects li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+
+.sidebar {
+    background-color: #eeeeee;
+    padding: 15px;
+    width: 200px;
+    height: 80.5vh;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: absolute;
+    margin-left: -20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #d9d9d9;
+    border-radius: 5px;
+}
+
+.sidebar ul ul {
+    padding-left: 20px;
+}

@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a2c9d6;
+    background-blend-mode: color;
+    width: auto;
+    position: relative;
+    bottom: 10px;
+    margin: 8px;
+    display: block;  
+}
+
+.header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 12px 22px;
+    background-color: #3c6a7a;
+    position:relative;
+    height: 80px;
+    width: 98.9%;
+    font-size: medium;
+    margin-left: -20px;
+    margin-right: -20px;
+    
+    
+}
+
+.header-logo {
+    width: 100px;
+    margin-right: 40px;
+}
+
+.header-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.user-badge {
+    width: 40px;
+    height: 40px;
+    background-color: #ff66b2;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: 10px;
+    position: relative;
+}
+
+.search-bar {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    width: 200px;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+    border-color: #3c6a7a;
+    box-shadow: 0 0 5px rgba(60, 106, 122, 0.5);
+}
+
+.search-button, .clear-button {
+    background: none;
+    border: none;
+    color: #3c6a7a;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+.search-button:hover, .clear-button:hover {
+    color: #1a1818;
+}
+
+.search-bar:focus + .search-button, .search-bar:not(:placeholder-shown) + .search-button {
+    right: 35px;
+}
+
+.search-bar:not(:placeholder-shown) ~ .clear-button {
+    display: block;
+}
+
+.clear-button {
+    display: none;
+}
+
+
+
+
+
+.sidebar {
+    background-color: #eeeeee;
+    padding: 15px;
+    width: 200px;
+    height: 80.5vh;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: absolute;
+    margin-left: -10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sidebar li:hover {
+    background-color: #d9d9d9;
+    border-radius: 5px;
+}
+
+.sidebar ul ul {
+    padding-left: 20px;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d7e9ee;
+}
+
+.welcome-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    
+}
+.main-content > .welcome-card{
+    position: absolute;
+    margin-top: 300px;
+    margin-left: 1000px;
+}
+
+.user-icon {
+    background-color: #5eb3cc;
+    color: white;
+    font-size: 24px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.welcome-message {
+    font-size: 16px;
+}
+
+.welcome-message h2 {
+    margin: 5px 0 0;
+}
+

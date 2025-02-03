@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="projectTrackingApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Tracking Portal</title>
+    <link rel="stylesheet" href="progress-track.css">
+</head>
+<body ng-controller="MainController as mainCtrl">
+    <div class="container">
+        
+        
+        <div class="main-content">
+            <div ng-view></div>
+
+            <div class="header">
+                <img src="images/logo.png" alt="Logo" class="header-logo">
+                <h1 class="header-title">PROJECT TRACKING PORTAL</h1>
+                <div class="user-badge">N</div>
+            </div>
+            <div class="sidebar">
+        <ul>
+            <a href="./home.html"><li>HOME</li></a>
+            <li ng-click="toggleDropdown('projectLogger')">PROJECT LOGGER</li>
+            <ul ng-show="dropdowns.projectLogger">
+                <a href="./create-logger.html"><li>Create Logger</li></a>
+                <a href="./logger-status.html"><li>Logger Status</li></a>
+            </ul>
+            <li ng-click="toggleDropdown('report')">REPORT</li>
+            <ul ng-show="dropdowns.report">
+                <a href="./software-report.html"><li>Software Report</li></a>
+                <li>Hardware Report</li>
+                <li>Report Status</li>
+            </ul>
+            <a href="./progress-track.html"><li>PROGRESS TRACK</li></a>
+        </ul>
+    </div>
+
+            <div class="content">
+                <div class="progress-section">
+                    <div class="progress-track">
+                        <h2>On Going Project Track</h2>
+                        <div class="progress-chart">
+                            <canvas id="progressChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="completed-projects">
+                        <h2>Completed Project Track</h2>
+                        <ul>
+                            <li>Total projects: {{ mainCtrl.totalProjects }}</li>
+                            <li>Software projects: {{ mainCtrl.softwareProjects }}</li>
+                            <li>Hardware projects: {{ mainCtrl.hardwareProjects }}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- AngularJS and Chart.js libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="progress-track.js"></script>
+</body>
+</html>

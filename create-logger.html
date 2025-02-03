@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loggerApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logger Form</title>
+    <link rel="stylesheet" href="create-logger.css">
+
+</head>
+<body ng-controller="FormController">
+
+    <div class="sidebar">
+        <ul>
+            <a href="./home.html"><li>HOME</li></a>
+            <li ng-click="toggleDropdown('projectLogger')">PROJECT LOGGER</li>
+            <ul ng-show="dropdowns.projectLogger">
+                <a href="./create-logger.html"><li>Create Logger</li></a>
+                <a href="./logger-status.html"><li>Logger Status</li></a>
+            </ul>
+            <li ng-click="toggleDropdown('report')">REPORT</li>
+            <ul ng-show="dropdowns.report">
+                <a href="./software-report.html"><li>Software Report</li></a>
+                <li>Hardware Report</li>
+                <li>Report Status</li>
+            </ul>
+            <a href="./progress-track.html"><li>PROGRESS TRACK</li></a>
+        </ul>
+    </div>
+
+    <div ng-view></div>
+
+    <div class="header">
+        <img src="images/logo.png" alt="Logo" class="header-logo">
+        <h1 class="header-title">PROJECT TRACKING PORTAL</h1>
+        <div class="user-badge">N</div>
+    </div>
+
+    <div class="container">
+        <h1>Logger Form</h1>
+        <form name="loggerForm" ng-submit="submitForm()" novalidate>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" ng-model="formData.name" required />
+                <span ng-show="loggerForm.name.$touched && loggerForm.name.$invalid">Name is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="rollNo">Roll No:</label>
+                <input type="text" id="rollNo" ng-model="formData.rollNo" required />
+                <span ng-show="loggerForm.rollNo.$touched && loggerForm.rollNo.$invalid">Roll No is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" ng-model="formData.email" required />
+                <span ng-show="loggerForm.email.$touched && loggerForm.email.$invalid">A valid email is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="domain">Domain:</label>
+                <select type="text" id="domain" ng-model="formData.domain" required >
+                <span ng-show="loggerForm.domain.$touched && loggerForm.domain.$invalid">Domain is required.</span>
+
+                    <option value="" disabled selected>Select Domain</option>
+                    <option value="Software">Software</option>
+                    <option value="Hardware">Hardware</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="title">Project Title:</label>
+                <input type="text" id="projectTitle" ng-model="formData.projectTitle" required />
+                <span ng-show="loggerForm.projectTitle.$touched && loggerForm.projectTitle.$invalid">Project Title is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="guide">Project Guide:</label>
+                <input type="text" id="projectGuide" ng-model="formData.projectGuide" required />
+                <span ng-show="loggerForm.projectGuide.$touched && loggerForm.projectGuide.$invalid">Project Guide is required</span>
+            </div>
+            <div class="form-group">
+                <label for="abstract">Abstract:</label>
+                <input type="file" id="abstract" ng-model="formData.abstract" required />
+                <span ng-show="loggerForm.abstract.$touched && loggerForm.abstract.$invalid">Abstract is required.</span>
+            </div>
+            <div class="form-group">
+                <button type="button" ng-click="redirectToCollaborative()">Add Collaborators</button>
+            </div>
+            <button type="submit" ng-disabled="loggerForm.$invalid">Submit</button>
+        </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="create-logger.js"></script>
+</body>
+</html>

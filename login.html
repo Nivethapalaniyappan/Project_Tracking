@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Tracking Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body ng-app="loginApp" ng-controller="LoginController">
+    <div class="login-container">
+        <img src="images/logo.png" alt="Logo" class="login-logo">
+        <form ng-submit="login()">
+            <h2>Email ID</h2>
+            <input type="text" ng-model="user.email" placeholder="Enter Email ID" required>
+            <h2>Password</h2>
+            <input type="password" ng-model="user.password" placeholder="Enter Password" required>
+            <a href="#" class="forgot-password">Forget Password ?</a>
+            <button type="submit">LOG IN</button>
+        </form>
+        <p ng-if="errorMessage">{{errorMessage}}</p>
+    </div>
+
+    <script>
+        var app = angular.module('loginApp', []);
+
+        app.controller('LoginController', ['$scope', '$http', function($scope, $http) {
+            $scope.user = {};
+            $scope.errorMessage = '';
+
+            $scope.login = function() {
+                $http.post('/api/login', $scope.user)
+                    .then(function(response) {
+                        if (response.data.success) {
+                            alert('Login successful');
+                        } else {
+                            $scope.errorMessage = 'Invalid username or password';
+                        }
+                    })
+                    .catch(function(error) {
+                        console.error('Error:', error);
+                        $scope.errorMessage = 'An error occurred during login';
+                    });
+            };
+        }]);
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #a2c9d6;
+    background-blend-mode: color;
+}
+
+/*header*/
+
+.header {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 12px 22px;
+    background-color: #3c6a7a;
+    position:relative;
+    height: 50px;
+    width: auto;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: -20px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.header-logo {
+    width: 70px;
+    margin-right: 40px;
+}
+
+/* cnetering container for form*/
+.center-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #040404;
+    border-radius: 5px;
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/*done button*/
+.done-button{
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 300px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 1180px;
+}
+.done-button:hover{
+    background-color: #0056b3;
+}
+
+/* Validation messages */
+form span {
+    color: red;
+    font-size: 12px;
+}
+
+/* Collaborators list styles */
+h2 {
+    margin-top: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+th {
+    background-color: #d1e7f0;
+    font-weight: bold;
+}
+
+
+/*ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #f9f9f9;
+}*/
+

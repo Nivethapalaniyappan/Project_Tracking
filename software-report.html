@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="projectTrackingApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Report</title>
+    <link rel="stylesheet" href="software-report.css">
+</head>
+<body ng-controller="ReportController as reportCtrl">
+    <div class="container">
+        <div class="main-content">
+            <div ng-view></div>
+
+            <div class="header">
+                <img src="images/logo.png" alt="Logo" class="header-logo">
+                <h1 class="header-title">PROJECT TRACKING PORTAL</h1>
+                <div class="user-badge">N</div>
+            </div>
+            <div class="content">
+                <h2>Software Report</h2>
+                <form ng-submit="reportCtrl.submitForm()" class="report-form">
+                    <div class="form-group">
+                        <label for="studentName">STUDENT NAME</label>
+                        <input type="text" id="studentName" ng-model="reportCtrl.formData.studentName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loggerId">LOGGER ID</label>
+                        <input type="text" id="loggerId" ng-model="reportCtrl.formData.loggerId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="projectTitle">PROJECT TITLE</label>
+                        <input type="text" id="projectTitle" ng-model="reportCtrl.formData.projectTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="weekStatus">WEEK STATUS</label>
+                        <select id="weekStatus" ng-model="reportCtrl.formData.weekStatus" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <!-- Add more options as needed -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="weeklyReport">WEEKLY REPORT</label>
+                        <input type="file" id="weeklyReport" ng-model="reportCtrl.formData.weeklyReport" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="completionProof">COMPLETION PROOF</label>
+                        <input type="url" id="completionProof" ng-model="reportCtrl.formData.completionProof" placeholder="https://github.com/">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">STATUS</label>
+                        <input type="text" id="status" ng-model="reportCtrl.formData.status" placeholder="Initiated" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="software-report.js"></script>
+</body>
+</html>
